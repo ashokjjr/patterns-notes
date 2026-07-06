@@ -33,7 +33,7 @@ nav:
   - Home: index.md
   - How to use: reference/how-to-use.md
   - Pattern Map: reference/pattern-map.md
-  - Interview Cheat Sheet: reference/interview-cheatsheet.md
+  - Quick Reference: reference/interview-cheatsheet.md
   - Data Replication:
       - Overview: 01-data-replication/index.md
       - Write-Ahead Log: 01-data-replication/01-write-ahead-log.md
