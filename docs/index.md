@@ -1,8 +1,8 @@
 # Distributed System Patterns Notes
 
-Fast-recall notes for distributed system design interviews and architecture reviews.
+Fast-recall notes for distributed system design and architecture reviews.
 
-The notes are based on Martin Fowler and Unmesh Joshi's catalog of distributed system patterns, reorganized into an interview-friendly structure.
+The notes are based on Martin Fowler and Unmesh Joshi's catalog of distributed system patterns, reorganized into a quick-reference structure.
 
 ## Sections
 
