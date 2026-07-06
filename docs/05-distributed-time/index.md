@@ -14,6 +14,6 @@ flowchart LR
 - [Hybrid Clock](02-hybrid-clock.md)
 - [Clock-Bound Wait](03-clock-bound-wait.md)
 
-## Interview trigger
+## Design trigger
 
 Use this section when the design depends on ordering, causality, freshness, or real-time consistency across nodes.
