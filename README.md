@@ -2,7 +2,7 @@
 
 GitHub Pages-ready quick reference for distributed-system patterns, based on Martin Fowler and Unmesh Joshi's **Catalog of Patterns of Distributed Systems**.
 
-This repo is organized for interview and design-review recall:
+This repo is organized for design-review and quick-recall use:
 
 1. Data Replication
 2. Leaders and Followers
@@ -12,7 +12,7 @@ This repo is organized for interview and design-review recall:
 6. Cluster Management
 7. Communication Between Nodes
 
-The original catalog/book grouping keeps many consensus-related patterns under Data Replication. This repo intentionally promotes **Leaders and Followers** and **Consensus and Commit** to top-level sections because that is easier to recall during system-design interviews.
+The original catalog/book grouping keeps many consensus-related patterns under Data Replication. This repo intentionally promotes **Leaders and Followers** and **Consensus and Commit** to top-level sections because that is easier to recall while reasoning about distributed systems.
 
 ## Local preview
 
@@ -29,7 +29,7 @@ Open <http://127.0.0.1:8000>.
 
 The workflow in `.github/workflows/pages.yml` builds and deploys the site from `main`.
 
-After pushing, enable GitHub Pages with source **GitHub Actions** in repository settings if it is not already enabled.
+Enable GitHub Pages with source **GitHub Actions** in repository settings if it is not already enabled.
 
 ## Source
 
