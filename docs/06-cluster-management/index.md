@@ -18,6 +18,6 @@ flowchart LR
 - [Gossip Dissemination](04-gossip-dissemination.md)
 - [Emergent Leader](05-emergent-leader.md)
 
-## Interview trigger
+## Design trigger
 
 Use this section when the design needs membership, ownership, configuration, liveness, metadata, leases, or decentralized state spread.
