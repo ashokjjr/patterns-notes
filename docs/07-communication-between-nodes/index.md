@@ -14,6 +14,6 @@ flowchart LR
 - [Request Batch](02-request-batch.md)
 - [Request Pipeline](03-request-pipeline.md)
 
-## Interview trigger
+## Design trigger
 
 Use this section when the design has high network overhead, ordered replication streams, batching, in-flight requests, or round-trip latency problems.
