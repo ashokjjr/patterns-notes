@@ -1,42 +1,66 @@
-function renderMermaidDiagrams() {
-  if (!window.mermaid) return;
+(function () {
+  function isMermaidText(text) {
+    var t = (text || "").trim();
+    return /^(flowchart|graph|sequenceDiagram|classDiagram|stateDiagram|stateDiagram-v2|erDiagram|journey|gantt|pie|gitGraph|mindmap|timeline|quadrantChart|xychart-beta|block-beta|packet-beta|architecture-beta)\b/.test(t);
+  }
 
-  document.querySelectorAll("pre code.language-mermaid").forEach(function (block) {
-    var parent = block.parentElement;
-    var container = document.createElement("div");
-    container.className = "mermaid";
-    container.textContent = block.textContent;
-    parent.replaceWith(container);
-  });
+  function convertMermaidCodeBlocks() {
+    document.querySelectorAll("pre > code").forEach(function (block) {
+      var pre = block.parentElement;
+      if (!pre || pre.getAttribute("data-mermaid-converted") === "true") return;
 
-  var diagrams = document.querySelectorAll(".mermaid:not([data-processed='true'])");
-  if (!diagrams.length) return;
+      var text = block.textContent || "";
+      var className = block.className || "";
+      var looksLikeMermaid = className.indexOf("language-mermaid") !== -1 || isMermaidText(text);
+      if (!looksLikeMermaid) return;
 
-  mermaid.run({
-    nodes: diagrams
-  });
-}
+      var container = document.createElement("div");
+      container.className = "mermaid";
+      container.textContent = text.trim();
+      pre.setAttribute("data-mermaid-converted", "true");
+      pre.replaceWith(container);
+    });
+  }
 
-function initMermaid() {
-  if (!window.mermaid) return;
+  function renderMermaidDiagrams() {
+    if (!window.mermaid) return;
 
-  mermaid.initialize({
-    startOnLoad: false,
-    theme: "default",
-    securityLevel: "loose"
-  });
+    convertMermaidCodeBlocks();
 
-  renderMermaidDiagrams();
-}
+    var diagrams = document.querySelectorAll(".mermaid:not([data-processed='true'])");
+    if (!diagrams.length) return;
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initMermaid);
-} else {
-  initMermaid();
-}
+    try {
+      mermaid.run({ nodes: diagrams });
+    } catch (e) {
+      console.error("Mermaid render failed", e);
+    }
+  }
 
-if (typeof document$ !== "undefined") {
-  document$.subscribe(function () {
+  function initMermaid() {
+    if (!window.mermaid) {
+      window.setTimeout(initMermaid, 100);
+      return;
+    }
+
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: "default",
+      securityLevel: "loose"
+    });
+
     renderMermaidDiagrams();
-  });
-}
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMermaid);
+  } else {
+    initMermaid();
+  }
+
+  if (typeof document$ !== "undefined") {
+    document$.subscribe(function () {
+      window.setTimeout(renderMermaidDiagrams, 0);
+    });
+  }
+})();
