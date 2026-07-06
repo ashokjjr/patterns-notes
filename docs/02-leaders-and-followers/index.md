@@ -14,6 +14,6 @@ flowchart LR
 - [Heartbeat](02-heartbeat.md)
 - [Follower Reads](03-follower-reads.md)
 
-## Interview trigger
+## Design trigger
 
 Use this section when the system has one writer per shard, replicas, failover, read replicas, or stale-read tradeoffs.
