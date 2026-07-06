@@ -1,6 +1,6 @@
 # How to use this knowledge base
 
-Use this repo as a quick reference before system design interviews, design reviews, or deep dives.
+Use this repo as a quick reference before system design discussions, architecture reviews, or deep dives.
 
 ## Recall loop
 
