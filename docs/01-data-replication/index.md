@@ -24,6 +24,6 @@ flowchart LR
 - [Versioned Value](07-versioned-value.md)
 - [Version Vector](08-version-vector.md)
 
-## Interview trigger
+## Design trigger
 
 Use this section when the question involves crash recovery, replica catch-up, retry safety, deduplication, log cleanup, or conflict detection.
