@@ -1,0 +1,80 @@
+site_name: Distributed System Patterns Notes
+site_description: Quick-reference distributed system patterns notes with diagrams
+repo_url: https://github.com/ashokjjr/patterns-notes
+repo_name: ashokjjr/patterns-notes
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+extra_javascript:
+  - https://unpkg.com/mermaid@10.9.3/dist/mermaid.min.js
+  - javascripts/mermaid-init.js
+nav:
+  - Home: index.md
+  - How to use: reference/how-to-use.md
+  - Pattern Map: reference/pattern-map.md
+  - Interview Cheat Sheet: reference/interview-cheatsheet.md
+  - Data Replication:
+      - Overview: 01-data-replication/index.md
+      - Write-Ahead Log: 01-data-replication/01-write-ahead-log.md
+      - Segmented Log: 01-data-replication/02-segmented-log.md
+      - Low-Water Mark: 01-data-replication/03-low-water-mark.md
+      - Singular Update Queue: 01-data-replication/04-singular-update-queue.md
+      - Request Waiting List: 01-data-replication/05-request-waiting-list.md
+      - Idempotent Receiver: 01-data-replication/06-idempotent-receiver.md
+      - Versioned Value: 01-data-replication/07-versioned-value.md
+      - Version Vector: 01-data-replication/08-version-vector.md
+  - Leaders and Followers:
+      - Overview: 02-leaders-and-followers/index.md
+      - Leader and Followers: 02-leaders-and-followers/01-leader-and-followers.md
+      - Heartbeat: 02-leaders-and-followers/02-heartbeat.md
+      - Follower Reads: 02-leaders-and-followers/03-follower-reads.md
+  - Consensus and Commit:
+      - Overview: 03-consensus-and-commit/index.md
+      - Majority Quorum: 03-consensus-and-commit/01-majority-quorum.md
+      - Generation Clock: 03-consensus-and-commit/02-generation-clock.md
+      - High-Water Mark: 03-consensus-and-commit/03-high-water-mark.md
+      - Paxos: 03-consensus-and-commit/04-paxos.md
+      - Replicated Log: 03-consensus-and-commit/05-replicated-log.md
+      - Two-Phase Commit: 03-consensus-and-commit/06-two-phase-commit.md
+  - Data Partitioning:
+      - Overview: 04-data-partitioning/index.md
+      - Fixed Partitions: 04-data-partitioning/01-fixed-partitions.md
+      - Key-Range Partitions: 04-data-partitioning/02-key-range-partitions.md
+  - Distributed Time:
+      - Overview: 05-distributed-time/index.md
+      - Lamport Clock: 05-distributed-time/01-lamport-clock.md
+      - Hybrid Clock: 05-distributed-time/02-hybrid-clock.md
+      - Clock-Bound Wait: 05-distributed-time/03-clock-bound-wait.md
+  - Cluster Management:
+      - Overview: 06-cluster-management/index.md
+      - Consistent Core: 06-cluster-management/01-consistent-core.md
+      - Lease: 06-cluster-management/02-lease.md
+      - State Watch: 06-cluster-management/03-state-watch.md
+      - Gossip Dissemination: 06-cluster-management/04-gossip-dissemination.md
+      - Emergent Leader: 06-cluster-management/05-emergent-leader.md
+  - Communication Between Nodes:
+      - Overview: 07-communication-between-nodes/index.md
+      - Single-Socket Channel: 07-communication-between-nodes/01-single-socket-channel.md
+      - Request Batch: 07-communication-between-nodes/02-request-batch.md
+      - Request Pipeline: 07-communication-between-nodes/03-request-pipeline.md
