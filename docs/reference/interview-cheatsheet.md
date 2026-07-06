@@ -1,8 +1,8 @@
-# Interview Cheat Sheet
+# Quick Reference
 
 ## Pattern triggers
 
-| Interview phrase | Pattern to reach for |
+| Design situation | Pattern to reach for |
 |---|---|
 | Node crashes after accepting a write | Write-Ahead Log |
 | Need to truncate old logs | Low-Water Mark + Segmented Log |
