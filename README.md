@@ -4,6 +4,7 @@ GitHub Pages-ready quick reference for distributed-system patterns, based on Mar
 
 This repo is organized for design-review and quick-recall use:
 
+0. System Models
 1. Data Replication
 2. Leaders and Followers
 3. Consensus and Commit
@@ -13,6 +14,8 @@ This repo is organized for design-review and quick-recall use:
 7. Communication Between Nodes
 
 The original catalog/book grouping keeps many consensus-related patterns under Data Replication. This repo intentionally promotes **Leaders and Followers** and **Consensus and Commit** to top-level sections because that is easier to recall while reasoning about distributed systems.
+
+Start with **System Models** when reasoning about correctness: link model, failure model, and timing model define what guarantees are possible.
 
 ## Local preview
 
