@@ -34,6 +34,7 @@ nav:
   - How to use: reference/how-to-use.md
   - Pattern Map: reference/pattern-map.md
   - Quick Reference: reference/quick-reference.md
+  - System Models: 00-system-models/index.md
   - Data Replication:
       - Overview: 01-data-replication/index.md
       - Write-Ahead Log: 01-data-replication/01-write-ahead-log.md
