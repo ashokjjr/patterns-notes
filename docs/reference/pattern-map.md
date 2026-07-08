@@ -4,7 +4,13 @@
 
 ```mermaid
 flowchart TD
-    Client[Client Request] --> Idem[Idempotent Receiver]
+    Models[System Models<br/>links, failures, timing] --> Client[Client Request]
+    Models --> Leader
+    Models --> Quorum
+    Models --> Time
+    Models --> Network
+
+    Client --> Idem[Idempotent Receiver]
     Idem --> Queue[Singular Update Queue]
     Queue --> WAL[Write-Ahead Log]
     WAL --> Seg[Segmented Log]
@@ -35,6 +41,7 @@ flowchart TD
 
 | Section | Patterns |
 |---|---|
+| System Models | Fair-loss link, Reliable link, Authenticated reliable link, Crash-stop, Crash-recovery, Arbitrary / Byzantine failure, Synchronous, Asynchronous, Partially synchronous |
 | Data Replication | Write-Ahead Log, Segmented Log, Low-Water Mark, Singular Update Queue, Request Waiting List, Idempotent Receiver, Versioned Value, Version Vector |
 | Leaders and Followers | Leader and Followers, Heartbeat, Follower Reads |
 | Consensus and Commit | Majority Quorum, Generation Clock, High-Water Mark, Paxos, Replicated Log, Two-Phase Commit |
